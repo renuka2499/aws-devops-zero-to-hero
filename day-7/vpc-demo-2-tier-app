@@ -1,3 +1,17 @@
 # VPC Demo for 2 tier app in private subnet
 
 https://youtu.be/FZPTL_kNvXc
+
+This example demonstrates how to create a VPC that we can use for servers in a production environment.
+
+To improve resiliency, we deploy the servers in 2 Availability Zones, by using an Auto Scaling group and an Applicataion Load Balancer.
+For additional security, we deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway.
+To improve resiliency, we deploy the NAT gateway in both Availability Zones.
+
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-example-private-subnets-nat.html
+
+Overview:
+The VPC has public subnets and private subnets in 2 Availability Zones.
+Each public subnet contains a NAT gateway and a loadbalancer node.
+The server run in private subnets, are launched and terminated by using an Auto Scaling group, and receive traffic from the load balancer.
+The servers can connect to the internet by using the NAT gateway
