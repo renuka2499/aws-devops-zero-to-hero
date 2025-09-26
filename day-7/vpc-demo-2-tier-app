@@ -2,6 +2,8 @@
 
 https://youtu.be/FZPTL_kNvXc
 
+VPC with public-private subnet in Production
+
 This example demonstrates how to create a VPC that we can use for servers in a production environment.
 
 To improve resiliency, we deploy the servers in 2 Availability Zones, by using an Auto Scaling group and an Applicataion Load Balancer.
@@ -14,4 +16,9 @@ Overview:
 The VPC has public subnets and private subnets in 2 Availability Zones.
 Each public subnet contains a NAT gateway and a loadbalancer node.
 The server run in private subnets, are launched and terminated by using an Auto Scaling group, and receive traffic from the load balancer.
-The servers can connect to the internet by using the NAT gateway
+The servers can connect to the internet by using the NAT gateway(NAT gateways will mask the IP addreess of applications while the applications try to access the internet)
+
+
+1. Autoscaling Group - Helps for scaling the servers based on load
+2. Load Balancer - different routing logics can be used to distribute the load
+3. Target Group - 
