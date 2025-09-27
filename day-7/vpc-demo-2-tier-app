@@ -22,3 +22,4 @@ The servers can connect to the internet by using the NAT gateway(NAT gateways wi
 1. Autoscaling Group - Helps for scaling the servers based on load
 2. Load Balancer - different routing logics can be used to distribute the load
 3. Target Group - 
+4. Bastion Host or Jump Server - The app servers(EC2) are created in the private subnets. so they don't have a public IP addressor we cannot SSH into these instances directly, as we want to keep them secure we will not create any Public IP address, so we will create a Bastion host or jump server in the public subnet & through this jump server we will connect to the EC2 instance(we can have a proper logging and auditing of what traffic flows into the private server from the jump server)
