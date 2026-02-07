@@ -33,7 +33,15 @@ IP addressing
 Network Access Control List (NACL)
 
     A Network Access Control List is a stateless firewall that controls inbound and outbound traffic at the subnet level. It operates at the IP address level and can allow or deny traffic based on rules that you define. NACLs provide an additional layer of network security for your VPC.
-   
+
+NAT Gateway
+
+  A NAT gateway enables private instances to access the internet, allowing private servers to download updates or access external APIs
+  Purpose: To allow instances in private subnets to connect to external services (like the internet) without being directly reachable from the internet. 
+  Functionality: It translates the private IP addresses of instances in a private subnet to a public IP address (its own) so they can access the internet. 
+  Direction: It enables outbound internet access from private resources but does not allow inbound connections from the internet to those private resources. 
+  Statefulness: It is a stateful service, meaning it keeps track of connections and automatically handles the return traffic for outgoing requests. 
+
 Security Group
 
     A security group acts as a virtual firewall for instances (EC2 instances or other resources) within a VPC. It controls inbound and outbound traffic at the instance level. Security groups allow you to define rules that permit or restrict traffic based on protocols, ports, and IP addresses.  
